@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<package name="struts2"  namespace="/" extends="struts-default">
+
+
+		<action name="register" class="edu.nju.desserthouse.action.RegisterAction">
+
+			<result name="success" type="redirect">/jsp/login.jsp</result>
+
+			<result name="input" type="redirect">/jsp/register.jsp?error=1</result>
+			
+			<result name="exist" type="redirect">/jsp/register.jsp?error=2</result>
+
+		</action>
+		
+		<action name="login" class="edu.nju.desserthouse.action.LoginAction">
+
+			<result name="member" type="redirect">/jsp/index.jsp</result>
+			
+			<result name="zongdian_waiter" type="redirect">/MyDessertSystem/plan</result>
+			
+			<result name="fendian_waiter" type="redirect">/MyDessertSystem/sale_list</result>
+			
+			<result name="manager" type="redirect">/MyDessertSystem/approveplan</result>
+			
+			<result name="systemmanager" type="redirect">/MyDessertSystem/systemmanage</result>
+
+			<result name="input" type="redirect">/jsp/login.jsp?error=1</result>
+
+		</action>
+		<action name="account" class="edu.nju.desserthouse.action.AccountAction">
+
+			<result name="success" type="redirect">/jsp/myaccount.jsp</result>
+
+		</action>
+		<action name="card" class="edu.nju.desserthouse.action.CardAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/account</result>
+
+			<result name="input" type="redirect">/jsp/myaccount.jsp?error=1</result>
+			
+			<result name="money" type="redirect">/jsp/myaccount.jsp?error=2</result>
+			
+			<result name="card" type="redirect">/jsp/myaccount.jsp?error=3</result>
+			
+			<result name="stop" type="redirect">/jsp/myaccount.jsp?error=6</result>
+
+		</action>
+		<action name="list" class="edu.nju.desserthouse.action.ListAction">
+
+			<result name="member_success" type="redirect">/jsp/list.jsp</result>
+			
+			<result name="waiter_success" type="redirect">/jsp/sale.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="seat" class="edu.nju.desserthouse.action.SeatAction">
+
+			<result name="success" type="redirect">/jsp/seat.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+			
+			<result name="login" type="redirect">/jsp/login.jsp</result>
+			
+			<result name="myaccount" type="redirect">/jsp/myaccount.jsp?error=4</result>
+			
+			<result name="nomoney" type="redirect">/MyDessertSystem/account</result>
+
+		</action>
+        <action name="systemmanage"  class="edu.nju.desserthouse.action.SystemManageAction">
+         
+         <result name="success" type="redirect">/jsp/waitermanage.jsp</result>
+        
+        </action>
+         <action name="systemmanageraccount" class="edu.nju.desserthouse.action.SystemManageAccountAction">
+
+			<result name="success" type="redirect">/jsp/systemmanageraccount.jsp</result>
+
+		</action>
+		<action name="deletewaiter" class="edu.nju.desserthouse.action.DeleteWaiterAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/systemmanage</result>
+
+		</action>
+		<action name="updatewaiter" class="edu.nju.desserthouse.action.UpdateWaiterAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/systemmanage</result>
+            <result name="input" type="redirect">/jsp/updateWaiter.jsp?error=1</result>
+		</action>
+		<action name="registerWaiter" class="edu.nju.desserthouse.action.RegisterWaiterAction">
+
+			<result name="success" type="redirect">/jsp/login.jsp</result>
+
+			<result name="input" type="redirect">/jsp/registerWaiter.jsp?error=1</result>
+			
+			<result name="exist" type="redirect">/jsp/register.jsp?error=2</result>
+
+		</action>
+		<action name="shopmanage"  class="edu.nju.desserthouse.action.ShopManageAction">
+         
+         <result name="success" type="redirect">/jsp/shopmanage.jsp</result>
+        
+        </action>
+        <action name="addShop" class="edu.nju.desserthouse.action.AddShopAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/shopmanage</result>
+
+			<result name="input" type="redirect">/jsp/addShop.jsp?error=1</result>
+			
+			<result name="exist" type="redirect">/jsp/addShop.jsp?error=2</result>
+
+		</action>
+		 <action name="deleteShop" class="edu.nju.desserthouse.action.DeleteShopAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/shopmanage</result>
+
+			<result name="existWaiter" type="redirect">/jsp/shopmanage.jsp?error=1</result>
+
+		</action>
+		<action name="updateShop" class="edu.nju.desserthouse.action.UpdateShopAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/shopmanage</result>
+            <result name="input" type="redirect">/jsp/updateShop.jsp?error=1</result>
+		</action>
+		
+		<action name="plan" class="edu.nju.desserthouse.action.PlanAction">
+
+			<result name="success" type="redirect">/jsp/plan.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="addPlan" class="edu.nju.desserthouse.action.AddPlanAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/plan</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="allplan" class="edu.nju.desserthouse.action.AllPlanAction">
+
+			<result name="success" type="redirect">/jsp/allplan.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="updatePlan" class="edu.nju.desserthouse.action.UpdatePlanAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/plan</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="allmember" class="edu.nju.desserthouse.action.AllMemberAction">
+
+			<result name="success" type="redirect">/jsp/allmember.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="rechargehistory" class="edu.nju.desserthouse.action.RechargeHistoryAction">
+
+			<result name="success" type="redirect">/jsp/rechargehistory.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="buyhistory" class="edu.nju.desserthouse.action.BuyHistoryAction">
+
+			<result name="success" type="redirect">/jsp/buyhistory.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		<action name="approveplan" class="edu.nju.desserthouse.action.ApprovePlanAction">
+
+			<result name="success" type="redirect">/jsp/approveplan.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="approve" class="edu.nju.desserthouse.action.ApproveAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/approveplan</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="disapprove" class="edu.nju.desserthouse.action.DisapproveAction">
+
+			<result name="success" type="redirect">/MyDessertSystem/approveplan</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="man_woman" class="edu.nju.desserthouse.action.Man_womanAction">
+
+			<result name="success" type="redirect">/jsp/man-woman.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="man_woman_number" class="edu.nju.desserthouse.action.Man_woman_numberAction">
+
+			<result name="success" type="redirect">/jsp/man-woman-number.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="card_status" class="edu.nju.desserthouse.action.Card_statusAction">
+
+			<result name="success" type="redirect">/jsp/card-status.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="test" class="edu.nju.desserthouse.action.TestAction">
+
+			<result name="success" type="redirect">/jsp/index.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="totalPrice" class="edu.nju.desserthouse.action.TotalPriceAction">
+
+			<result name="card" type="redirect">/jsp/paybycard.jsp</result>
+			
+			<result name="cash" type="redirect">/jsp/paybycash.jsp</result>
+			
+			<result name="cardAndCredit" type="redirect">/jsp/paybycardAndCredit.jsp</result>
+			
+			<result name="cashAndCredit" type="redirect">/jsp/paybycashAndCredit.jsp</result>
+			
+			<result name="login" type="redirect">/jsp/login.jsp</result>
+			
+			<result name="myaccount" type="redirect">/jsp/myaccount.jsp?error=4</result>
+			
+			<result name="nomoney" type="redirect">/MyDessertSystem/account</result>
+		</action>
+		<action name="paybycard" class="edu.nju.desserthouse.action.PaybycardAction">
+		 
+		 <result name="success" type="redirect">/jsp/index.jsp</result>
+		 
+		</action>
+		<action name="paybycash" class="edu.nju.desserthouse.action.PaybycashAction">
+		 
+		 <result name="success" type="redirect">/jsp/index.jsp</result>
+		 
+		</action>
+		<action name="paybycardAndCredit" class="edu.nju.desserthouse.action.PaybycardAndCreditAction">
+		 
+		 <result name="success" type="redirect">/jsp/index.jsp</result>
+		 
+		</action>
+		<action name="paybycashAndCredit" class="edu.nju.desserthouse.action.PaybycashAndCreditAction">
+		 
+		 <result name="success" type="redirect">/jsp/index.jsp</result>
+		 
+		</action>
+		<action name="stopMember" class="edu.nju.desserthouse.action.StopMemberAction">
+		 
+		 <result name="success" type="redirect">/jsp/index.jsp</result>
+		 
+		</action>
+		<action name="updatemember" class="edu.nju.desserthouse.action.UpdateMemberAction">
+
+			<result name="success" type="redirect">/jsp/index.jsp</result>
+            
+		</action>
+		
+		<action name="sale" class="edu.nju.desserthouse.action.SaleAction">
+
+			<result name="card" type="redirect">/jsp/sale_paybycard.jsp</result>
+			
+			<result name="cash" type="redirect">/jsp/sale_paybycash.jsp</result>
+			
+			<result name="cardAndCredit" type="redirect">/jsp/sale_paybycardAndCredit.jsp</result>
+			
+			<result name="cashAndCredit" type="redirect">/jsp/sale_paybycashAndCredit.jsp</result>
+			
+			<result name="login" type="redirect">/jsp/login.jsp</result>
+			
+			<result name="myaccount" type="redirect">/jsp/myaccount.jsp?error=4</result>
+			
+			<result name="nomoney" type="redirect">/MyDessertSystem/account</result>
+		</action>
+		<action name="sale_paybycard" class="edu.nju.desserthouse.action.Sale_PaybycardAction">
+		 
+		 <result name="success" type="redirect">/MyDessertSystem/list</result>
+		 
+		</action>
+		<action name="sale_paybycash" class="edu.nju.desserthouse.action.Sale_PaybycashAction">
+		 
+		 <result name="success" type="redirect">/MyDessertSystem/list</result>
+		 
+		</action>
+		<action name="sale_paybycardAndCredit" class="edu.nju.desserthouse.action.Sale_PaybycardAndCreditAction">
+		 
+		 <result name="success" type="redirect">/MyDessertSystem/list</result>
+		 
+		</action>
+		<action name="sale_paybycashAndCredit" class="edu.nju.desserthouse.action.Sale_PaybycashAndCreditAction">
+		 
+		 <result name="success" type="redirect">/MyDessertSystem/list</result>
+		 
+		</action>
+		<action name="man_woman_cost" class="edu.nju.desserthouse.action.CountSaleAction">
+
+			<result name="success" type="redirect">/jsp/man-woman-cost.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="book_shop" class="edu.nju.desserthouse.action.Book_shopAction">
+
+			<result name="success" type="redirect">/jsp/book_shop.jsp</result>
+			
+
+		</action>
+		<action name="hostSale" class="edu.nju.desserthouse.action.HostSaleAction">
+
+			<result name="success" type="redirect">/jsp/hostSale.jsp</result>
+
+		</action>
+		<action name="returnList" class="edu.nju.desserthouse.action.ReturnListAction">
+
+			<result name="success" type="redirect">/jsp/returnList.jsp</result>
+
+		</action>
+		<action name="deleteAllsale" class="edu.nju.desserthouse.action.DeleteAllsaleAction">
+
+			<result name="success" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="sale_list" class="edu.nju.desserthouse.action.Sale_ListAction">
+
+			<result name="member_success" type="redirect">/jsp/list.jsp</result>
+			
+			<result name="waiter_success" type="redirect">/jsp/sale.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		
+	</package>
+
+</struts>
+

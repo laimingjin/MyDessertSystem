@@ -1,0 +1,19 @@
+.standard_select{ /*边框*/
+	display:inline-block;
+	border:solid 1px #E3E9EF;
+	border-top-color:#ABADB3;
+	padding:5px; /*调整此处改变select高度*/
+}
+.select_shelter{ /*遮挡默认边框*/
+	display:inline-block;
+	width:180px;
+	*width:98px;
+	height:20px;
+	overflow:hidden;
+}
+.select_shelter select{
+	*margin:-2px;
+	padding:1px;
+	border:0px;
+	width:180px; /*select的宽度*/
+}
